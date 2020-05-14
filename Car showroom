@@ -1,0 +1,85 @@
+package javaapplication1;
+import java.util.*;
+interface Showroom {
+void Brand();    
+}
+class Company implements Showroom{
+   
+    @Override
+    public void Brand() {
+      Scanner obj= new Scanner(System.in);
+      System.out.println("Which company would you like to choose? "
+              + "\n press 1 for Honda \n press 2 for Suzuki");
+      int c=obj.nextInt();
+      Honda h=new Honda();
+      Suzuki s=new Suzuki();
+      switch(c){
+          case 1:
+              System.out.println("####  HONDA  ####");
+              h.Car();
+              break;
+          case 2:
+              System.out.println("####  SUZUKI  ####");
+              s.Car();
+              break;
+      }
+    }
+  }
+class Honda extends Company{
+    int a,b;
+    Scanner obj= new Scanner(System.in);
+    public void Car(){
+        System.out.println("Choose any car \n 1.City 2.Civic 3.Accord");
+        a=obj.nextInt();
+        switch(a){
+            case 1:
+                System.out.println("City \n Price: 14 lakhs");
+                break;
+            case 2:
+                System.out.println("Civic \n Price: 22 lakhs");
+                break;
+            case 3:
+                System.out.println("Accord \n Price: 43 lakhs");
+                break;
+        }
+    System.out.println("Which colour do you want to choose?\n 1.Black 2.White ");
+    b=obj.nextInt();
+    if(b==1)
+        System.out.println("black");
+    else
+            System.out.println("white");
+    }
+}
+class Suzuki extends Company{
+    Scanner obj1 = new Scanner(System.in);
+    public void Car(){
+        System.out.println("Choose any car \n 1.Swift 2.WagonR 3.Alto");
+        int a=obj1.nextInt();
+        switch(a){
+            case 1:
+                System.out.println("Swift \n Price: 9 lakhs");
+                break;
+            case 2:
+                System.out.println("WagonR \n Price: 6 lakhs");
+                break;
+            case 3:
+                System.out.println("Alto \n Price: 4 lakhs");
+                break;
+        }
+    System.out.println("Which colour do you want to choose?\n 1.Black 2.White ");
+    int b=obj1.nextInt();
+    if(b==1)
+        System.out.println("black");
+    else
+            System.out.println("white");
+    }
+  }
+public class project1 {
+    public static void main(String[]args){
+    Scanner a=new Scanner(System.in);
+    System.out.println("\t\tCAR SHOWROOM");
+    Company inp=new Company();
+    inp.Brand();
+    }
+}
+
