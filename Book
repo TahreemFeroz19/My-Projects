@@ -1,0 +1,52 @@
+package javaapplication1;
+import java.util.*;
+public abstract class Book {
+    String title;
+    double price;
+    Book(String t){
+        t=title;
+    }
+    Scanner inp=new Scanner(System.in);
+    String getTitle(String title){
+        return(title);
+    }
+    double getPrice(){
+        return(price);
+    }
+    abstract double setPrice();
+}
+class Fiction extends Book{
+
+    public Fiction(String t) {
+        super(t);
+    }
+
+    @Override
+    double setPrice() {
+       return(24.99);
+    }
+  }
+class Nonfiction extends Book{
+    public Nonfiction(String t){
+        super(t);
+    }
+    @Override
+    double setPrice(){
+        return(37.99);
+    }
+}
+
+public class NewClass2 {
+   public static void main(String args[]){
+    Fiction obj1=new Fiction("abcd");
+    Nonfiction obj2=new Nonfiction("efgh");
+    Scanner inp=new Scanner (System.in);
+    System.out.println("which type of book is it\n 1.Fiction\n 2.non-fiction");
+    int a=inp.nextInt();
+    if(a==1){
+        System.out.println("price is "+obj1.setPrice());
+    }
+    else
+        System.out.println("price is "+obj2.setPrice());
+}
+}
